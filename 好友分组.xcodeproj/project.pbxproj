@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22C755D31DB8B306009D7888 /* FriendGroupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C755D21DB8B306009D7888 /* FriendGroupAction.m */; };
+		22C755D51DB8B33B009D7888 /* friendList.json in Resources */ = {isa = PBXBuildFile; fileRef = 22C755D41DB8B33B009D7888 /* friendList.json */; };
+		22C755D81DB8B3BC009D7888 /* FriendGroupItemAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C755D71DB8B3BC009D7888 /* FriendGroupItemAction.m */; };
+		22C755DB1DB8B3FB009D7888 /* FriendItemAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C755DA1DB8B3FB009D7888 /* FriendItemAction.m */; };
 		22F483161DB8AC34006CE907 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F483151DB8AC34006CE907 /* main.m */; };
 		22F483191DB8AC34006CE907 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F483181DB8AC34006CE907 /* AppDelegate.m */; };
 		22F4831C1DB8AC34006CE907 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F4831B1DB8AC34006CE907 /* ViewController.m */; };
@@ -36,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22C755D11DB8B306009D7888 /* FriendGroupAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendGroupAction.h; sourceTree = "<group>"; };
+		22C755D21DB8B306009D7888 /* FriendGroupAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendGroupAction.m; sourceTree = "<group>"; };
+		22C755D41DB8B33B009D7888 /* friendList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = friendList.json; sourceTree = "<group>"; };
+		22C755D61DB8B3BC009D7888 /* FriendGroupItemAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendGroupItemAction.h; sourceTree = "<group>"; };
+		22C755D71DB8B3BC009D7888 /* FriendGroupItemAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendGroupItemAction.m; sourceTree = "<group>"; };
+		22C755D91DB8B3FB009D7888 /* FriendItemAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendItemAction.h; sourceTree = "<group>"; };
+		22C755DA1DB8B3FB009D7888 /* FriendItemAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendItemAction.m; sourceTree = "<group>"; };
 		22F483111DB8AC34006CE907 /* 好友分组.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "好友分组.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F483151DB8AC34006CE907 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		22F483171DB8AC34006CE907 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,6 +91,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22C755CD1DB8B2B7009D7888 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				22C755D01DB8B2E5009D7888 /* View */,
+				22C755CF1DB8B2DA009D7888 /* ViewCtronller */,
+				22C755CE1DB8B2C5009D7888 /* DataModel */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		22C755CE1DB8B2C5009D7888 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				22C755D11DB8B306009D7888 /* FriendGroupAction.h */,
+				22C755D21DB8B306009D7888 /* FriendGroupAction.m */,
+				22C755D61DB8B3BC009D7888 /* FriendGroupItemAction.h */,
+				22C755D71DB8B3BC009D7888 /* FriendGroupItemAction.m */,
+				22C755D91DB8B3FB009D7888 /* FriendItemAction.h */,
+				22C755DA1DB8B3FB009D7888 /* FriendItemAction.m */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		22C755CF1DB8B2DA009D7888 /* ViewCtronller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewCtronller;
+			sourceTree = "<group>";
+		};
+		22C755D01DB8B2E5009D7888 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		22F483081DB8AC34006CE907 = {
 			isa = PBXGroup;
 			children = (
@@ -103,10 +151,12 @@
 		22F483131DB8AC34006CE907 /* 好友分组 */ = {
 			isa = PBXGroup;
 			children = (
+				22C755CD1DB8B2B7009D7888 /* Class */,
 				22F483171DB8AC34006CE907 /* AppDelegate.h */,
 				22F483181DB8AC34006CE907 /* AppDelegate.m */,
 				22F4831A1DB8AC34006CE907 /* ViewController.h */,
 				22F4831B1DB8AC34006CE907 /* ViewController.m */,
+				22C755D41DB8B33B009D7888 /* friendList.json */,
 				22F4831D1DB8AC34006CE907 /* Main.storyboard */,
 				22F483231DB8AC34006CE907 /* Assets.xcassets */,
 				22F483251DB8AC34006CE907 /* LaunchScreen.storyboard */,
@@ -210,6 +260,7 @@
 				TargetAttributes = {
 					22F483101DB8AC34006CE907 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = LKFT65X5X2;
 					};
 					22F4832C1DB8AC34006CE907 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -249,6 +300,7 @@
 				22F483271DB8AC34006CE907 /* LaunchScreen.storyboard in Resources */,
 				22F483241DB8AC34006CE907 /* Assets.xcassets in Resources */,
 				22F4831F1DB8AC34006CE907 /* Main.storyboard in Resources */,
+				22C755D51DB8B33B009D7888 /* friendList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,8 +325,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C755DB1DB8B3FB009D7888 /* FriendItemAction.m in Sources */,
 				22F4831C1DB8AC34006CE907 /* ViewController.m in Sources */,
 				22F483221DB8AC34006CE907 /* ____.xcdatamodeld in Sources */,
+				22C755D81DB8B3BC009D7888 /* FriendGroupItemAction.m in Sources */,
+				22C755D31DB8B306009D7888 /* FriendGroupAction.m in Sources */,
 				22F483191DB8AC34006CE907 /* AppDelegate.m in Sources */,
 				22F483161DB8AC34006CE907 /* main.m in Sources */,
 			);
@@ -419,7 +474,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 立 李 (97C789H853)";
 				INFOPLIST_FILE = "好友分组/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "EH.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -430,7 +488,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "好友分组/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "EH.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -502,6 +562,7 @@
 				22F483431DB8AC35006CE907 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22F483441DB8AC35006CE907 /* Build configuration list for PBXNativeTarget "好友分组Tests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +571,7 @@
 				22F483461DB8AC35006CE907 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22F483471DB8AC35006CE907 /* Build configuration list for PBXNativeTarget "好友分组UITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +580,7 @@
 				22F483491DB8AC35006CE907 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

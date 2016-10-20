@@ -1,0 +1,27 @@
+{
+    "group" : [
+        {
+            "groupName" : "我的好友",
+            "friendNum" : "10",
+            "friendList" : [
+                {
+                    "nickname" : "会飞的鱼",
+                    "account" : "100001",
+                    "avatar" : "1.jpg"
+                },
+                {
+                    "nickname" : "不吃肉的老虎",
+                    "account" : "100002",
+                    "avatar" : "1.jpg"
+                },
+                {
+                    "nickname" : "会飞的鱼",
+                    "account" : "100003",
+                    "avatar" : "1.jpg"
+                }
+            ]
+        }
+    ]
+}
+
+
