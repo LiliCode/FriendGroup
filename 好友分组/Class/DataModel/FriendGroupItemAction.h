@@ -15,8 +15,25 @@
 @property (strong , nonatomic) NSNumber *friendNum;  //当前分组好友数量
 @property (strong , nonatomic , readonly) NSArray *friendList;  //当前组好友列表
 
-
+/**
+ *  @author Lili, 16-10-20 16:10:24
+ *
+ *  添加成员
+ *
+ *  @param item 需要添加的好友对象
+ */
 - (void)addFriendItem:(FriendItemAction *)item;
+
+/**
+ *  @author Lili, 16-10-20 16:10:46
+ *
+ *  删除成员
+ *
+ *  @param item 需要删除的好友对象
+ */
+- (void)removeFriendItem:(FriendItemAction *)item;
+
+
 
 
 @end
