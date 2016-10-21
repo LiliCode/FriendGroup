@@ -9,11 +9,25 @@
 #import <Foundation/Foundation.h>
 #import "FriendItemAction.h"
 
-@interface FriendGroupItemAction : NSObject
+@interface FriendGroupItemAction : NSObject<NSCopying>
 
-@property (copy , nonatomic) NSString *groupName;    //组名称
-@property (strong , nonatomic) NSNumber *friendNum;  //当前分组好友数量
+@property (copy , nonatomic) NSString *groupName;     //组名称
+@property (assign , nonatomic , readonly) NSUInteger friendNum; //当前分组好友数量
 @property (strong , nonatomic , readonly) NSArray *friendList;  //当前组好友列表
+
+
+/**
+ *  @author Lili, 16-10-20 16:10:05
+ *
+ *  创建分组对象
+ *
+ *  @param name 分组名称
+ *  @param list 分组中的好友列表
+ *
+ *  @return 返回分组
+ */
++ (instancetype)groupItemWithName:(NSString *)name list:(NSMutableArray *)list;
+
 
 /**
  *  @author Lili, 16-10-20 16:10:24

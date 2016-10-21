@@ -11,6 +11,12 @@
 		22C755D51DB8B33B009D7888 /* friendList.json in Resources */ = {isa = PBXBuildFile; fileRef = 22C755D41DB8B33B009D7888 /* friendList.json */; };
 		22C755D81DB8B3BC009D7888 /* FriendGroupItemAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C755D71DB8B3BC009D7888 /* FriendGroupItemAction.m */; };
 		22C755DB1DB8B3FB009D7888 /* FriendItemAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C755DA1DB8B3FB009D7888 /* FriendItemAction.m */; };
+		22C755DE1DB9AC87009D7888 /* FriendGroupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C755DD1DB9AC87009D7888 /* FriendGroupVC.m */; };
+		22C755E11DB9F5A8009D7888 /* FriendGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C755E01DB9F5A8009D7888 /* FriendGroupCell.m */; };
+		22C755E41DB9F735009D7888 /* FriendItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C755E31DB9F735009D7888 /* FriendItemCell.m */; };
+		22C755F01DBA10A6009D7888 /* baiqi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22C755ED1DBA10A6009D7888 /* baiqi.jpg */; };
+		22C755F11DBA10A6009D7888 /* meinv.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22C755EE1DBA10A6009D7888 /* meinv.jpg */; };
+		22C755F21DBA10A6009D7888 /* sucai.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22C755EF1DBA10A6009D7888 /* sucai.jpg */; };
 		22F483161DB8AC34006CE907 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F483151DB8AC34006CE907 /* main.m */; };
 		22F483191DB8AC34006CE907 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F483181DB8AC34006CE907 /* AppDelegate.m */; };
 		22F4831C1DB8AC34006CE907 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F4831B1DB8AC34006CE907 /* ViewController.m */; };
@@ -47,6 +53,15 @@
 		22C755D71DB8B3BC009D7888 /* FriendGroupItemAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendGroupItemAction.m; sourceTree = "<group>"; };
 		22C755D91DB8B3FB009D7888 /* FriendItemAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendItemAction.h; sourceTree = "<group>"; };
 		22C755DA1DB8B3FB009D7888 /* FriendItemAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendItemAction.m; sourceTree = "<group>"; };
+		22C755DC1DB9AC87009D7888 /* FriendGroupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendGroupVC.h; sourceTree = "<group>"; };
+		22C755DD1DB9AC87009D7888 /* FriendGroupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendGroupVC.m; sourceTree = "<group>"; };
+		22C755DF1DB9F5A8009D7888 /* FriendGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendGroupCell.h; sourceTree = "<group>"; };
+		22C755E01DB9F5A8009D7888 /* FriendGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendGroupCell.m; sourceTree = "<group>"; };
+		22C755E21DB9F735009D7888 /* FriendItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendItemCell.h; sourceTree = "<group>"; };
+		22C755E31DB9F735009D7888 /* FriendItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendItemCell.m; sourceTree = "<group>"; };
+		22C755ED1DBA10A6009D7888 /* baiqi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = baiqi.jpg; sourceTree = "<group>"; };
+		22C755EE1DBA10A6009D7888 /* meinv.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meinv.jpg; sourceTree = "<group>"; };
+		22C755EF1DBA10A6009D7888 /* sucai.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sucai.jpg; sourceTree = "<group>"; };
 		22F483111DB8AC34006CE907 /* 好友分组.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "好友分组.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F483151DB8AC34006CE907 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		22F483171DB8AC34006CE907 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -128,6 +143,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		22C755EC1DBA1098009D7888 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				22C755ED1DBA10A6009D7888 /* baiqi.jpg */,
+				22C755EE1DBA10A6009D7888 /* meinv.jpg */,
+				22C755EF1DBA10A6009D7888 /* sucai.jpg */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		22F483081DB8AC34006CE907 = {
 			isa = PBXGroup;
 			children = (
@@ -151,11 +176,18 @@
 		22F483131DB8AC34006CE907 /* 好友分组 */ = {
 			isa = PBXGroup;
 			children = (
+				22C755EC1DBA1098009D7888 /* Assets */,
 				22C755CD1DB8B2B7009D7888 /* Class */,
 				22F483171DB8AC34006CE907 /* AppDelegate.h */,
 				22F483181DB8AC34006CE907 /* AppDelegate.m */,
 				22F4831A1DB8AC34006CE907 /* ViewController.h */,
 				22F4831B1DB8AC34006CE907 /* ViewController.m */,
+				22C755DC1DB9AC87009D7888 /* FriendGroupVC.h */,
+				22C755DD1DB9AC87009D7888 /* FriendGroupVC.m */,
+				22C755DF1DB9F5A8009D7888 /* FriendGroupCell.h */,
+				22C755E01DB9F5A8009D7888 /* FriendGroupCell.m */,
+				22C755E21DB9F735009D7888 /* FriendItemCell.h */,
+				22C755E31DB9F735009D7888 /* FriendItemCell.m */,
 				22C755D41DB8B33B009D7888 /* friendList.json */,
 				22F4831D1DB8AC34006CE907 /* Main.storyboard */,
 				22F483231DB8AC34006CE907 /* Assets.xcassets */,
@@ -298,9 +330,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				22F483271DB8AC34006CE907 /* LaunchScreen.storyboard in Resources */,
+				22C755F21DBA10A6009D7888 /* sucai.jpg in Resources */,
 				22F483241DB8AC34006CE907 /* Assets.xcassets in Resources */,
 				22F4831F1DB8AC34006CE907 /* Main.storyboard in Resources */,
+				22C755F11DBA10A6009D7888 /* meinv.jpg in Resources */,
 				22C755D51DB8B33B009D7888 /* friendList.json in Resources */,
+				22C755F01DBA10A6009D7888 /* baiqi.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,12 +360,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C755DE1DB9AC87009D7888 /* FriendGroupVC.m in Sources */,
 				22C755DB1DB8B3FB009D7888 /* FriendItemAction.m in Sources */,
 				22F4831C1DB8AC34006CE907 /* ViewController.m in Sources */,
 				22F483221DB8AC34006CE907 /* ____.xcdatamodeld in Sources */,
 				22C755D81DB8B3BC009D7888 /* FriendGroupItemAction.m in Sources */,
 				22C755D31DB8B306009D7888 /* FriendGroupAction.m in Sources */,
+				22C755E41DB9F735009D7888 /* FriendItemCell.m in Sources */,
 				22F483191DB8AC34006CE907 /* AppDelegate.m in Sources */,
+				22C755E11DB9F5A8009D7888 /* FriendGroupCell.m in Sources */,
 				22F483161DB8AC34006CE907 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

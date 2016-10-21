@@ -3,9 +3,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--好友列表-->
+        <!--好友列表测试-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -17,24 +18,123 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9kh-Ea-uSn">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXv-yb-wDO">
+                                <rect key="frame" x="104" y="268" width="112" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="跳转到好友列表"/>
+                                <connections>
+                                    <segue destination="aik-Vr-EjF" kind="show" id="pMG-IS-1uK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9kh-Ea-uSn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Au2-bz-yuI"/>
-                            <constraint firstAttribute="trailing" secondItem="9kh-Ea-uSn" secondAttribute="trailing" id="HQk-hR-HH1"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9kh-Ea-uSn" secondAttribute="bottom" id="O1t-ck-alm"/>
-                            <constraint firstItem="9kh-Ea-uSn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="res-Y9-FHQ"/>
+                            <constraint firstItem="aXv-yb-wDO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Nc-Lz-FYX"/>
+                            <constraint firstItem="aXv-yb-wDO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZfV-6Z-bEW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="好友列表" id="mZQ-Wh-9eK"/>
+                    <navigationItem key="navigationItem" title="好友列表测试" id="mZQ-Wh-9eK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1078" y="427"/>
+        </scene>
+        <!--好友列表-->
+        <scene sceneID="1S9-Sp-kpl">
+            <objects>
+                <tableViewController id="aik-Vr-EjF" customClass="FriendGroupVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="OPb-SP-TnO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" rowHeight="50" id="07G-If-K0Z" customClass="FriendGroupCell">
+                                <rect key="frame" x="0.0" y="114" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="07G-If-K0Z" id="Krz-2W-2lm">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分组名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvk-Tg-DlG">
+                                            <rect key="frame" x="8" y="15" width="64" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Hg7-QU-BiO"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m88-S7-h7s">
+                                            <rect key="frame" x="297" y="16" width="15" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="17" id="DTW-aC-8Ou"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Yvk-Tg-DlG" firstAttribute="centerY" secondItem="Krz-2W-2lm" secondAttribute="centerY" id="kfn-8A-dNw"/>
+                                        <constraint firstItem="m88-S7-h7s" firstAttribute="centerY" secondItem="Krz-2W-2lm" secondAttribute="centerY" id="p1t-vr-haQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="m88-S7-h7s" secondAttribute="trailing" constant="8" id="uLB-6X-wJv"/>
+                                        <constraint firstItem="Yvk-Tg-DlG" firstAttribute="leading" secondItem="Krz-2W-2lm" secondAttribute="leading" constant="8" id="wGC-xz-VH6"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="friendNumLabel" destination="m88-S7-h7s" id="aUF-YT-6z0"/>
+                                    <outlet property="groupNameLabel" destination="Yvk-Tg-DlG" id="7zc-ef-Ef1"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="itemCell" rowHeight="50" id="YMY-4a-xqH" customClass="FriendItemCell">
+                                <rect key="frame" x="0.0" y="164" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YMY-4a-xqH" id="xip-g0-UVv">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MSM-pl-QZU">
+                                            <rect key="frame" x="8" y="8" width="33" height="33"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="MSM-pl-QZU" secondAttribute="height" multiplier="1:1" id="8VE-w4-WX4"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="好友昵称" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuN-Ee-4XX">
+                                            <rect key="frame" x="248" y="15" width="64" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Epg-LV-kEb"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="QuN-Ee-4XX" firstAttribute="centerY" secondItem="xip-g0-UVv" secondAttribute="centerY" id="0w8-1Q-b1r"/>
+                                        <constraint firstItem="MSM-pl-QZU" firstAttribute="centerY" secondItem="xip-g0-UVv" secondAttribute="centerY" id="79q-q5-x4s"/>
+                                        <constraint firstItem="MSM-pl-QZU" firstAttribute="leading" secondItem="xip-g0-UVv" secondAttribute="leading" constant="8" id="DD1-zO-q8K"/>
+                                        <constraint firstAttribute="bottom" secondItem="MSM-pl-QZU" secondAttribute="bottom" constant="8" id="YqL-x7-Mtt"/>
+                                        <constraint firstItem="MSM-pl-QZU" firstAttribute="top" secondItem="xip-g0-UVv" secondAttribute="top" constant="8" id="bhm-g6-lA0"/>
+                                        <constraint firstAttribute="trailing" secondItem="QuN-Ee-4XX" secondAttribute="trailing" constant="8" id="u9t-Vu-bI8"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avatarImageView" destination="MSM-pl-QZU" id="euo-M8-GCL"/>
+                                    <outlet property="nicknameLabel" destination="QuN-Ee-4XX" id="rSt-EH-7vz"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="aik-Vr-EjF" id="J11-wY-wGy"/>
+                            <outlet property="delegate" destination="aik-Vr-EjF" id="CVG-e0-D8G"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="好友列表" id="OgC-64-TcL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kjz-cI-LM5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1551" y="427"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6EG-Fg-Ny0">

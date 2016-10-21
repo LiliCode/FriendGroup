@@ -7,17 +7,38 @@
                 {
                     "nickname" : "会飞的鱼",
                     "account" : "100001",
-                    "avatar" : "1.jpg"
+                    "avatar" : "baiqi.jpg"
                 },
                 {
                     "nickname" : "不吃肉的老虎",
                     "account" : "100002",
-                    "avatar" : "1.jpg"
+                    "avatar" : "meinv.jpg"
                 },
                 {
-                    "nickname" : "会飞的鱼",
+                    "nickname" : "会飞的猫",
                     "account" : "100003",
-                    "avatar" : "1.jpg"
+                    "avatar" : "sucai.jpg"
+                }
+            ]
+        },
+        {
+        "groupName" : "我的同学",
+        "friendNum" : "10",
+        "friendList" : [
+                {
+                    "nickname" : "曹操",
+                    "account" : "100004",
+                    "avatar" : "baiqi.jpg"
+                },
+                {
+                    "nickname" : "白小飞",
+                    "account" : "100005",
+                    "avatar" : "meinv.jpg"
+                },
+                {
+                    "nickname" : "刘备",
+                    "account" : "100006",
+                    "avatar" : "sucai.jpg"
                 }
             ]
         }

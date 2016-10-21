@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "FriendGroupAction.h"
 
 @interface ViewController ()
 
@@ -18,7 +19,9 @@
 {
     [super viewDidLoad];
     
-    
+//    FriendGroupAction *group = [FriendGroupAction group];
+//    
+//    NSLog(@"%@", group.groupList);
 }
 
 - (void)didReceiveMemoryWarning
