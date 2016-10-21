@@ -11,9 +11,10 @@
 
 @interface FriendGroupItemAction : NSObject<NSCopying>
 
-@property (copy , nonatomic) NSString *groupName;     //组名称
+@property (copy , nonatomic) NSString *groupName;               //组名称
 @property (assign , nonatomic , readonly) NSUInteger friendNum; //当前分组好友数量
 @property (strong , nonatomic , readonly) NSArray *friendList;  //当前组好友列表
+@property (assign , nonatomic , readonly) BOOL isDropDown;      //是否落下（是否打开分组）
 
 
 /**
@@ -28,6 +29,14 @@
  */
 + (instancetype)groupItemWithName:(NSString *)name list:(NSMutableArray *)list;
 
+/**
+ *  @author Lili, 16-10-21 17:10:06
+ *
+ *  点击分组，会自动判断是否打开好友列表
+ *
+ *  @param complete 点击之后回调，在回调中做刷新UI的操作
+ */
+- (void)clickGroup:(void (^)(BOOL isDropDown))complete;
 
 /**
  *  @author Lili, 16-10-20 16:10:24

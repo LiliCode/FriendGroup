@@ -23,6 +23,9 @@
     [super viewDidLoad];
     
     self.friendGroup = [FriendGroupAction group];   //初始化分组
+    
+    self.tableView.separatorInset = UIEdgeInsetsZero;
+    
 }
 
 
@@ -69,6 +72,16 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row)
+    {
+        return 60.0f;
+    }
+    
+    return 50.0f;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 0.000001f;
@@ -85,7 +98,23 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    //得到当前分组
+    FriendGroupItemAction *groupItem = self.friendGroup.groupList[indexPath.section];
     
+    if (!indexPath.row)
+    {
+        //点击当前分组
+        __weak typeof(self) weakSelf = self;
+        [groupItem clickGroup:^(BOOL isDropDown) {
+            //刷新列表
+            [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationNone];
+        }];
+    }
+    else
+    {
+        //点击好友
+        
+    }
 }
 
 

@@ -10,7 +10,7 @@
 
 @interface FriendGroupItemAction ()
 @property (strong , nonatomic) NSMutableArray *list;
-
+@property (assign , nonatomic) BOOL dropDown;
 
 @end
 
@@ -50,7 +50,12 @@
 
 - (NSArray *)friendList
 {
-    return [self.list copy];
+    return self.isDropDown? [self.list copy] : nil; //根据是否打开分组，来返回列表
+}
+
+- (BOOL)isDropDown
+{
+    return self.dropDown;
 }
 
 - (void)addFriendItem:(FriendItemAction *)item
@@ -69,6 +74,15 @@
     }
 }
 
+- (void)clickGroup:(void (^)(BOOL))complete
+{
+    self.dropDown = self.isDropDown? NO : YES;
+    
+    if (complete)
+    {
+        complete(self.dropDown);
+    }
+}
 
 
 - (id)copyWithZone:(NSZone *)zone
