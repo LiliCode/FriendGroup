@@ -199,11 +199,11 @@ void alert(NSString *msg)
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"添加" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *addGroupAction = [UIAlertAction actionWithTitle:@"添加分组" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
+        [self performSegueWithIdentifier:@"addGroup" sender:nil];
     }];
     
     UIAlertAction *addFriendAction = [UIAlertAction actionWithTitle:@"添加好友" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
+        [self performSegueWithIdentifier:@"addMember" sender:nil];
     }];
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {

@@ -137,10 +137,52 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="WoQ-Vg-qSV" kind="show" identifier="addGroup" id="sew-XK-oDM"/>
+                        <segue destination="JQP-2G-U1B" kind="show" identifier="addMember" id="5CO-rY-RNp"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjz-cI-LM5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1551" y="427"/>
+        </scene>
+        <!--添加分组-->
+        <scene sceneID="2Cf-lB-STu">
+            <objects>
+                <viewController id="WoQ-Vg-qSV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OhF-5J-hzg"/>
+                        <viewControllerLayoutGuide type="bottom" id="KyJ-xq-AFE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x0m-Df-YSN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="添加分组" id="t5c-FL-rH8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="05A-gc-K5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2072" y="110"/>
+        </scene>
+        <!--添加成员-->
+        <scene sceneID="i7s-9L-tqW">
+            <objects>
+                <viewController id="JQP-2G-U1B" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s3U-U0-8go"/>
+                        <viewControllerLayoutGuide type="bottom" id="oQ5-uH-72T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zl9-pq-abk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="添加成员" id="hky-rV-qul"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xfg-9Y-2Ab" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2072" y="733"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6EG-Fg-Ny0">
