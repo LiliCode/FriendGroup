@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
+UIKIT_EXTERN void alert(NSString *msg);
+
+
 @interface FriendGroupVC : UITableViewController
 
 @end

@@ -20,12 +20,29 @@
 {
     [super awakeFromNib];
     
+    //添加长按手势
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(groupLongPress:)];
+    [self addGestureRecognizer:longPress];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
     
+}
+
+
+- (void)groupLongPress:(UILongPressGestureRecognizer *)sender
+{
+    //长按
+    if (sender.state == UIGestureRecognizerStateBegan)
+    {
+        if ([self.delegate respondsToSelector:@selector(longPressGroup:)])
+        {
+            [self.delegate longPressGroup:self];
+        }
+    }
 }
 
 

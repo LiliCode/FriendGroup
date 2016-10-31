@@ -15,6 +15,9 @@
 @property (assign , nonatomic , readonly) NSUInteger friendNum; //当前分组好友数量
 @property (strong , nonatomic , readonly) NSArray *friendList;  //当前组好友列表
 @property (assign , nonatomic , readonly) BOOL isDropDown;      //是否落下（是否打开分组）
+@property (assign , nonatomic , readonly) BOOL isDefaultGroup;  //是否是默认分组
+
+
 
 
 /**
@@ -28,6 +31,18 @@
  *  @return 返回分组
  */
 + (instancetype)groupItemWithName:(NSString *)name list:(NSMutableArray *)list;
+
+/**
+ *  @author Lili, 16-10-31 10:10:18
+ *
+ *  创建默认分组
+ *
+ *  @param name 分组名称
+ *  @param list 好友列表
+ *
+ *  @return 返回分组
+ */
++ (instancetype)defaultGroupItemWithName:(NSString *)name list:(NSMutableArray *)list;
 
 /**
  *  @author Lili, 16-10-21 17:10:06
@@ -56,7 +71,12 @@
  */
 - (void)removeFriendItem:(FriendItemAction *)item;
 
-
+/**
+ *  @author Lili, 16-10-31 11:10:20
+ *
+ *  删除全部成员
+ */
+- (void)removeAllFriendItem;
 
 
 @end

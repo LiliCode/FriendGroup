@@ -11,6 +11,7 @@
 @interface FriendGroupItemAction ()
 @property (strong , nonatomic) NSMutableArray *list;
 @property (assign , nonatomic) BOOL dropDown;
+@property (assign , nonatomic) BOOL defaultGroup;
 
 @end
 
@@ -19,14 +20,20 @@
 
 + (instancetype)groupItemWithName:(NSString *)name list:(NSMutableArray *)list
 {
-    return [[[self class] alloc] initWithName:name list:list];
+    return [[[self class] alloc] initWithName:name isDefaultGroup:NO list:list];
 }
 
-- (instancetype)initWithName:(NSString *)name list:(NSMutableArray *)list
++ (instancetype)defaultGroupItemWithName:(NSString *)name list:(NSMutableArray *)list
+{
+    return [[[self class] alloc] initWithName:name isDefaultGroup:YES list:list];
+}
+
+- (instancetype)initWithName:(NSString *)name isDefaultGroup:(BOOL)defaultGroup list:(NSMutableArray *)list
 {
     if (self = [super init])
     {
         self.groupName = name;
+        self.defaultGroup = defaultGroup;   //是否是默认分组
         [self.list addObjectsFromArray:[list copy]];
     }
     
@@ -58,6 +65,12 @@
     return self.dropDown;
 }
 
+- (BOOL)isDefaultGroup
+{
+    return self.defaultGroup;
+}
+
+
 - (void)addFriendItem:(FriendItemAction *)item
 {
     if (item)
@@ -72,6 +85,11 @@
     {
         [self.list removeObject:item];
     }
+}
+
+- (void)removeAllFriendItem
+{
+    [self.list removeAllObjects];
 }
 
 - (void)clickGroup:(void (^)(BOOL))complete
@@ -98,12 +116,12 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"groupName:%@\nfriendNum:%lu\nfriendList:%@", self.groupName, self.friendNum, self.list];
+    return [NSString stringWithFormat:@"groupName:%@\nfriendNum:%lu\nfriendList:%@\ndefaultGroup:%d", self.groupName, self.friendNum, self.list, self.defaultGroup];
 }
 
 - (NSString *)debugDescription
 {
-    return [NSString stringWithFormat:@"groupName:%@\nfriendNum:%lu\nfriendList:%@", self.groupName, self.friendNum, self.list];
+    return [NSString stringWithFormat:@"groupName:%@\nfriendNum:%lu\nfriendList:%@\ndefaultGroup:%d", self.groupName, self.friendNum, self.list, self.defaultGroup];
 }
 
 @end

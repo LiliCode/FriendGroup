@@ -9,9 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "FriendGroupItemAction.h"
 
+@class FriendGroupCell;
+@protocol FriendGroupCellDelegate <NSObject>
+@optional
+- (void)longPressGroup:(FriendGroupCell *)cell;
+
+@end
+
 @interface FriendGroupCell : UITableViewCell
 
 @property (strong , nonatomic) FriendGroupItemAction *groupItem;
 
+@property (weak , nonatomic) id<FriendGroupCellDelegate> delegate;
+
 
 @end
+
+

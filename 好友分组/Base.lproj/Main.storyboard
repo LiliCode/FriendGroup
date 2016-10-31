@@ -130,7 +130,13 @@
                             <outlet property="delegate" destination="aik-Vr-EjF" id="CVG-e0-D8G"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="好友列表" id="OgC-64-TcL"/>
+                    <navigationItem key="navigationItem" title="好友列表" id="OgC-64-TcL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="r7X-Gc-QgH">
+                            <connections>
+                                <action selector="add:" destination="aik-Vr-EjF" id="q5H-qQ-Nfh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjz-cI-LM5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,8 @@
 
 @interface FriendGroupAction ()
 @property (strong , nonatomic) NSMutableArray *group;
+@property (assign , nonatomic) BOOL has_default_group;
+@property (strong , nonatomic) FriendGroupItemAction *default_group;
 
 @end
 
@@ -24,11 +26,19 @@
 {
     if (self = [super init])
     {
+        //加载默认分组
+        [self loadDefaultGroup];
         //初始化
         [self loadGroup];   //加载分组
     }
     
     return self;
+}
+
+- (void)loadDefaultGroup
+{
+    FriendGroupItemAction *dGroup = [FriendGroupItemAction defaultGroupItemWithName:@"我的好友" list:nil];
+    [self addGroup:dGroup];
 }
 
 - (void)loadGroup
@@ -56,6 +66,7 @@
         
         //得到好友分组
         FriendGroupItemAction *groupItem = [FriendGroupItemAction groupItemWithName:groupDic[@"groupName"] list:[tempFriendList mutableCopy]];
+
         //添加到分组列表
         [self addGroup:groupItem];
     }
@@ -75,6 +86,22 @@
 {
     if (group)
     {
+        //将要添加分组...
+        //添加分组是判断是否有多有默认分组,只能有一个默认分组
+        NSAssert(!(self.hasDefaultGroup && group.isDefaultGroup), @"不能有多个默认分组");
+        //设置是否有默认分组标示
+        if (!self.hasDefaultGroup && group.isDefaultGroup)
+        {
+            self.has_default_group = YES;
+            //设置默认分组
+            self.default_group = group;
+            //添加默认分组 默认分组必须是置顶
+            [self.group insertObject:group atIndex:0];
+            
+            return;
+        }
+        
+        //添加分组
         [self.group addObject:group];
     }
 }
@@ -83,6 +110,39 @@
 {
     if (group)
     {
+        //将要删除分组...
+        //删除分组时，将好友移动到默认分组中去
+        //1.判断是否是默认分组，若是默认分组则不能删除
+        if (group.isDefaultGroup)
+        {
+            if ([self.delegate respondsToSelector:@selector(didReceiveFriendGroupMessage:)])
+            {
+                [self.delegate didReceiveFriendGroupMessage:@"不能删除默认分组!"];
+            }
+            
+            return;
+        }
+        
+        //2.判断是否有默认分组,若没有就创建
+        if (!self.hasDefaultGroup)
+        {
+            [self loadDefaultGroup];
+        }
+        
+        //3.将该分组的成员移动到默认分组中去
+        //展开分组
+        if (!group.isDropDown)
+        {
+            [group clickGroup:nil];
+        }
+        
+        for (FriendItemAction *member in group.friendList)
+        {
+            [self.defaultGroup addFriendItem:[member copy]];
+        }
+        
+        //删除分组
+        [group removeAllFriendItem];
         [self.group removeObject:group];
     }
 }
@@ -92,6 +152,15 @@
     return [self.group copy];
 }
 
+- (BOOL)hasDefaultGroup
+{
+    return self.has_default_group;
+}
+
+- (FriendGroupItemAction *)defaultGroup
+{
+    return self.default_group;
+}
 
 //解析json成字典
 - (NSDictionary *)readJSONContentsOfFile:(NSString *)path

@@ -9,6 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "FriendGroupItemAction.h"
 
+@protocol FriendGroupActionDelegate <NSObject>
+
+@optional
+/**
+ *  @author Lili, 16-10-31 11:10:04
+ *
+ *  收到消息
+ *
+ *  @param msg 消息文本
+ */
+- (void)didReceiveFriendGroupMessage:(NSString *)msg;
+
+@end
+
 @interface FriendGroupAction : NSObject
 //分组个数
 @property (assign , nonatomic , readonly) NSUInteger groupNum;
@@ -16,6 +30,14 @@
 @property (assign , nonatomic , readonly) NSUInteger friendNum;
 //分组列表
 @property (strong , nonatomic , readonly) NSArray *groupList;
+//是否有默认分组
+@property (assign , nonatomic , readonly) BOOL hasDefaultGroup;
+//获取默认分组
+@property (strong , nonatomic , readonly) FriendGroupItemAction *defaultGroup;
+
+//消息代理
+@property (weak , nonatomic) id<FriendGroupActionDelegate> delegate;
+
 
 /**
  *  @author Lili, 16-10-20 17:10:34
