@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class FriendGroupItemAction;
 @interface FriendItemAction : NSObject<NSCopying>
 
 @property (copy , nonatomic) NSString *nickname;    //昵称
 @property (copy , nonatomic) NSString *account;     //账号
 @property (copy , nonatomic) NSString *avatar;      //头像名称
+
+@property (weak , nonatomic) FriendGroupItemAction *currentGroup;   //当前所在分组
 
 /**
  *  @author Lili, 16-10-20 16:10:29
@@ -26,6 +29,15 @@
  *  @return 返回好友对象
  */
 + (instancetype)friendItemWithName:(NSString *)name account:(NSString *)account avatar:(NSString *)avatarName;
+
+/**
+ *  @author Lili, 16-11-02 00:11:54
+ *
+ *  移动到分组
+ *
+ *  @param group 需要移动到该分组
+ */
+- (void)moveToGroup:(FriendGroupItemAction *)group;
 
 
 @end

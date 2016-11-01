@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FriendGroupItemAction.h"
 
+@class NSIndexPath;
 @protocol FriendGroupActionDelegate <NSObject>
 
 @optional
@@ -65,6 +66,16 @@
  *  @param group 需要删除的分组
  */
 - (void)removeGroup:(FriendGroupItemAction *)group;
+
+/**
+ *  @author Lili, 16-11-02 00:11:40
+ *
+ *  移动某一分组下的成员到另一个分组
+ *
+ *  @param originIndexPath 需要移动的成员的IndexPath
+ *  @param toGroup         移动到该分组
+ */
+- (void)moveIndexPath:(NSIndexPath *)originIndexPath toGroup:(FriendGroupItemAction *)group;
 
 
 @end

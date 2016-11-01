@@ -7,6 +7,7 @@
 //
 
 #import "FriendGroupAction.h"
+#import <UIKit/UIKit.h>
 
 @interface FriendGroupAction ()
 @property (strong , nonatomic) NSMutableArray *group;
@@ -54,19 +55,17 @@
     {
         //获取当前分组的好友列表
         NSArray *friendList = groupDic[@"friendList"];
-        NSMutableArray *tempFriendList = [NSMutableArray new];  //临时好友列表
+        //得到好友分组
+        FriendGroupItemAction *groupItem = [FriendGroupItemAction groupItemWithName:groupDic[@"groupName"] list:[NSMutableArray new]];
         //遍历好友
         for (NSDictionary *friendDic in friendList)
         {
             //得到好友数据
             FriendItemAction *friendItem = [FriendItemAction friendItemWithName:friendDic[@"nickname"] account:friendDic[@"account"] avatar:friendDic[@"avatar"]];
-            //添加到临时好友列表
-            [tempFriendList addObject:friendItem];
+            //添加到好友分组
+            [groupItem addFriendItem:friendItem];
         }
         
-        //得到好友分组
-        FriendGroupItemAction *groupItem = [FriendGroupItemAction groupItemWithName:groupDic[@"groupName"] list:[tempFriendList mutableCopy]];
-
         //添加到分组列表
         [self addGroup:groupItem];
     }
@@ -146,6 +145,18 @@
         [self.group removeObject:group];
     }
 }
+
+- (void)moveIndexPath:(NSIndexPath *)originIndexPath toGroup:(FriendGroupItemAction *)group
+{
+    //获取分组
+    FriendGroupItemAction *friendGroup = self.groupList[originIndexPath.section];
+    //获取成员
+    FriendItemAction *friendItem = friendGroup.friendList[originIndexPath.row];
+    //移动
+    [friendItem moveToGroup:group];
+}
+
+
 
 - (NSArray *)groupList
 {

@@ -76,6 +76,7 @@
     if (item)
     {
         [self.list addObject:item];
+        item.currentGroup = self;
     }
 }
 

@@ -12,6 +12,7 @@
 #import "FriendGroupAction.h"
 #import "AddGroupVC.h"
 #import "AddMemberVC.h"
+#import "UIAlertAction+Extension.h"
 
 void alert(NSString *msg)
 {
@@ -150,7 +151,8 @@ void alert(NSString *msg)
     }];
     
     UITableViewRowAction *moveAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"移动到分组" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-        
+        //移动
+        [weakSelf moveIndexPath:[NSIndexPath indexPathForRow:indexPath.row - 1 inSection:indexPath.section]];
     }];
     moveAction.backgroundColor = [UIColor grayColor];
     
@@ -161,6 +163,38 @@ void alert(NSString *msg)
 {
     return YES;
 }
+
+- (void)moveIndexPath:(NSIndexPath *)indexPath
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"移动到分组" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    NSUInteger index = 0;
+    for (FriendGroupItemAction *groupItem in self.friendGroup.groupList)
+    {
+        UIAlertAction *action = [UIAlertAction actionWithTitle:groupItem.groupName style:UIAlertActionStyleDefault index:index++ handler:^(UIAlertAction * _Nonnull action) {
+            //获取移动到分组
+            FriendGroupItemAction *group = self.friendGroup.groupList[action.index];
+            //移动
+            [self.friendGroup moveIndexPath:indexPath toGroup:group];
+            //刷新
+#if 1
+            [self.tableView reloadData];
+#else
+            [self.tableView reloadSections:[[NSIndexSet alloc] initWithIndex:action.index] withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView reloadSections:[[NSIndexSet alloc] initWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationNone];
+#endif
+        }];
+        
+        [alert addAction:action];
+    }
+    
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault index:index handler:nil];
+    [alert addAction:action];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
+
 
 #pragma mark - FriendGroupCellDelegate
 
@@ -245,6 +279,11 @@ void alert(NSString *msg)
 {
     [super didReceiveMemoryWarning];
     
+}
+
+- (void)dealloc
+{
+    NSLog(@"好友分组列表释放");
 }
 
 #pragma mark - Navigation

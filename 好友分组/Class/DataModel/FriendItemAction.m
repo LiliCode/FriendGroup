@@ -7,6 +7,7 @@
 //
 
 #import "FriendItemAction.h"
+#import "FriendGroupItemAction.h"
 
 @implementation FriendItemAction
 
@@ -26,6 +27,15 @@
     }
     
     return self;
+}
+
+
+- (void)moveToGroup:(FriendGroupItemAction *)group
+{
+    //复制一份到另外一个分组
+    [group addFriendItem:[self copy]];
+    //删除在当前分组的当前成员
+    [self.currentGroup removeFriendItem:self];
 }
 
 
