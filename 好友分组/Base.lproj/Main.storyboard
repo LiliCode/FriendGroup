@@ -149,7 +149,7 @@
         <!--添加分组-->
         <scene sceneID="2Cf-lB-STu">
             <objects>
-                <viewController id="WoQ-Vg-qSV" sceneMemberID="viewController">
+                <viewController id="WoQ-Vg-qSV" customClass="AddGroupVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OhF-5J-hzg"/>
                         <viewControllerLayoutGuide type="bottom" id="KyJ-xq-AFE"/>
@@ -157,9 +157,44 @@
                     <view key="view" contentMode="scaleToFill" id="x0m-Df-YSN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入您要添加的组名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fyR-WC-a2T">
+                                <rect key="frame" x="8" y="72" width="304" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YBj-ga-eOz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbw-YQ-xWX">
+                                <rect key="frame" x="8" y="130" width="304" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="wuO-hf-Z0L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="确定">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="add:" destination="WoQ-Vg-qSV" eventType="touchUpInside" id="Osq-ve-2nE"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Tbw-YQ-xWX" secondAttribute="trailing" constant="8" id="58T-rF-xJx"/>
+                            <constraint firstAttribute="trailing" secondItem="fyR-WC-a2T" secondAttribute="trailing" constant="8" id="7UU-9m-pJJ"/>
+                            <constraint firstItem="fyR-WC-a2T" firstAttribute="leading" secondItem="x0m-Df-YSN" secondAttribute="leading" constant="8" id="SsE-7r-4r6"/>
+                            <constraint firstItem="fyR-WC-a2T" firstAttribute="top" secondItem="OhF-5J-hzg" secondAttribute="bottom" constant="8" id="Wbu-bG-Csg"/>
+                            <constraint firstItem="Tbw-YQ-xWX" firstAttribute="top" secondItem="fyR-WC-a2T" secondAttribute="bottom" constant="8" id="fyg-sf-dpT"/>
+                            <constraint firstItem="Tbw-YQ-xWX" firstAttribute="leading" secondItem="x0m-Df-YSN" secondAttribute="leading" constant="8" id="qA8-cd-W16"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="添加分组" id="t5c-FL-rH8"/>
+                    <connections>
+                        <outlet property="groupNameTextField" destination="fyR-WC-a2T" id="w9g-PS-kQV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05A-gc-K5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,7 +203,7 @@
         <!--添加成员-->
         <scene sceneID="i7s-9L-tqW">
             <objects>
-                <viewController id="JQP-2G-U1B" sceneMemberID="viewController">
+                <viewController id="JQP-2G-U1B" customClass="AddMemberVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s3U-U0-8go"/>
                         <viewControllerLayoutGuide type="bottom" id="oQ5-uH-72T"/>
@@ -176,9 +211,71 @@
                     <view key="view" contentMode="scaleToFill" id="zl9-pq-abk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入成员名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J2B-Yw-plI">
+                                <rect key="frame" x="8" y="72" width="304" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="8eE-sB-7KN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入成员账号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uER-ad-ldf">
+                                <rect key="frame" x="8" y="125" width="304" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="knD-PX-sCe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vV2-gi-myJ">
+                                <rect key="frame" x="8" y="178" width="304" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ejg-NX-F0X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="选择分组"/>
+                                <connections>
+                                    <action selector="selectGroup:" destination="JQP-2G-U1B" eventType="touchUpInside" id="KrC-lj-Ryl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdP-ad-XO3">
+                                <rect key="frame" x="8" y="228" width="304" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="2Cy-O7-EDk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="确定">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="add:" destination="JQP-2G-U1B" eventType="touchUpInside" id="6en-1b-FBZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J2B-Yw-plI" firstAttribute="leading" secondItem="zl9-pq-abk" secondAttribute="leading" constant="8" id="2oD-M8-KAE"/>
+                            <constraint firstAttribute="trailing" secondItem="J2B-Yw-plI" secondAttribute="trailing" constant="8" id="5DG-wb-QNp"/>
+                            <constraint firstItem="zdP-ad-XO3" firstAttribute="leading" secondItem="zl9-pq-abk" secondAttribute="leading" constant="8" id="HlV-iG-uFx"/>
+                            <constraint firstItem="vV2-gi-myJ" firstAttribute="leading" secondItem="zl9-pq-abk" secondAttribute="leading" constant="8" id="JQX-3R-buZ"/>
+                            <constraint firstItem="vV2-gi-myJ" firstAttribute="top" secondItem="uER-ad-ldf" secondAttribute="bottom" constant="8" id="OB7-Xn-NZx"/>
+                            <constraint firstAttribute="trailing" secondItem="vV2-gi-myJ" secondAttribute="trailing" constant="8" id="QvK-Oa-bD9"/>
+                            <constraint firstAttribute="trailing" secondItem="zdP-ad-XO3" secondAttribute="trailing" constant="8" id="Vnl-eG-hc8"/>
+                            <constraint firstAttribute="trailing" secondItem="uER-ad-ldf" secondAttribute="trailing" constant="8" id="cnI-mF-Ae9"/>
+                            <constraint firstItem="uER-ad-ldf" firstAttribute="leading" secondItem="zl9-pq-abk" secondAttribute="leading" constant="8" id="lUx-JX-PFt"/>
+                            <constraint firstItem="uER-ad-ldf" firstAttribute="top" secondItem="J2B-Yw-plI" secondAttribute="bottom" constant="8" id="rpa-U5-k5r"/>
+                            <constraint firstItem="zdP-ad-XO3" firstAttribute="top" secondItem="vV2-gi-myJ" secondAttribute="bottom" constant="10" id="xX0-Xw-3dj"/>
+                            <constraint firstItem="J2B-Yw-plI" firstAttribute="top" secondItem="s3U-U0-8go" secondAttribute="bottom" constant="8" id="ySE-Ha-3Ow"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="添加成员" id="hky-rV-qul"/>
+                    <connections>
+                        <outlet property="accountTextField" destination="uER-ad-ldf" id="fPk-ZS-6he"/>
+                        <outlet property="memberNameTextField" destination="J2B-Yw-plI" id="PoB-XW-wJu"/>
+                        <outlet property="selectGroupButton" destination="vV2-gi-myJ" id="UDx-g5-mCd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfg-9Y-2Ab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

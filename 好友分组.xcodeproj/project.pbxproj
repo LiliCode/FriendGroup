@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		226D74771DC8C94700BA8936 /* AddGroupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 226D74761DC8C94700BA8936 /* AddGroupVC.m */; };
+		226D747A1DC8C95700BA8936 /* AddMemberVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 226D74791DC8C95700BA8936 /* AddMemberVC.m */; };
+		226D747E1DC8D0AC00BA8936 /* UIAlertAction+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 226D747D1DC8D0AC00BA8936 /* UIAlertAction+Extension.m */; };
 		22C755D31DB8B306009D7888 /* FriendGroupAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C755D21DB8B306009D7888 /* FriendGroupAction.m */; };
 		22C755D51DB8B33B009D7888 /* friendList.json in Resources */ = {isa = PBXBuildFile; fileRef = 22C755D41DB8B33B009D7888 /* friendList.json */; };
 		22C755D81DB8B3BC009D7888 /* FriendGroupItemAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C755D71DB8B3BC009D7888 /* FriendGroupItemAction.m */; };
@@ -46,6 +49,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		226D74751DC8C94700BA8936 /* AddGroupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddGroupVC.h; sourceTree = "<group>"; };
+		226D74761DC8C94700BA8936 /* AddGroupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddGroupVC.m; sourceTree = "<group>"; };
+		226D74781DC8C95700BA8936 /* AddMemberVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMemberVC.h; sourceTree = "<group>"; };
+		226D74791DC8C95700BA8936 /* AddMemberVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMemberVC.m; sourceTree = "<group>"; };
+		226D747B1DC8CA7E00BA8936 /* PassValueDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassValueDelegate.h; sourceTree = "<group>"; };
+		226D747C1DC8D0AC00BA8936 /* UIAlertAction+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+Extension.h"; sourceTree = "<group>"; };
+		226D747D1DC8D0AC00BA8936 /* UIAlertAction+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+Extension.m"; sourceTree = "<group>"; };
 		22C755D11DB8B306009D7888 /* FriendGroupAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendGroupAction.h; sourceTree = "<group>"; };
 		22C755D21DB8B306009D7888 /* FriendGroupAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendGroupAction.m; sourceTree = "<group>"; };
 		22C755D41DB8B33B009D7888 /* friendList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = friendList.json; sourceTree = "<group>"; };
@@ -186,6 +196,13 @@
 				22C755DD1DB9AC87009D7888 /* FriendGroupVC.m */,
 				22C755DF1DB9F5A8009D7888 /* FriendGroupCell.h */,
 				22C755E01DB9F5A8009D7888 /* FriendGroupCell.m */,
+				226D74751DC8C94700BA8936 /* AddGroupVC.h */,
+				226D74761DC8C94700BA8936 /* AddGroupVC.m */,
+				226D74781DC8C95700BA8936 /* AddMemberVC.h */,
+				226D74791DC8C95700BA8936 /* AddMemberVC.m */,
+				226D747B1DC8CA7E00BA8936 /* PassValueDelegate.h */,
+				226D747C1DC8D0AC00BA8936 /* UIAlertAction+Extension.h */,
+				226D747D1DC8D0AC00BA8936 /* UIAlertAction+Extension.m */,
 				22C755E21DB9F735009D7888 /* FriendItemCell.h */,
 				22C755E31DB9F735009D7888 /* FriendItemCell.m */,
 				22C755D41DB8B33B009D7888 /* friendList.json */,
@@ -364,11 +381,14 @@
 				22C755DB1DB8B3FB009D7888 /* FriendItemAction.m in Sources */,
 				22F4831C1DB8AC34006CE907 /* ViewController.m in Sources */,
 				22F483221DB8AC34006CE907 /* ____.xcdatamodeld in Sources */,
+				226D74771DC8C94700BA8936 /* AddGroupVC.m in Sources */,
 				22C755D81DB8B3BC009D7888 /* FriendGroupItemAction.m in Sources */,
+				226D747A1DC8C95700BA8936 /* AddMemberVC.m in Sources */,
 				22C755D31DB8B306009D7888 /* FriendGroupAction.m in Sources */,
 				22C755E41DB9F735009D7888 /* FriendItemCell.m in Sources */,
 				22F483191DB8AC34006CE907 /* AppDelegate.m in Sources */,
 				22C755E11DB9F5A8009D7888 /* FriendGroupCell.m in Sources */,
+				226D747E1DC8D0AC00BA8936 /* UIAlertAction+Extension.m in Sources */,
 				22F483161DB8AC34006CE907 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

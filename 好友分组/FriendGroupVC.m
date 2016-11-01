@@ -10,6 +10,8 @@
 #import "FriendItemCell.h"
 #import "FriendGroupCell.h"
 #import "FriendGroupAction.h"
+#import "AddGroupVC.h"
+#import "AddMemberVC.h"
 
 void alert(NSString *msg)
 {
@@ -17,7 +19,7 @@ void alert(NSString *msg)
     [alt show];
 }
 
-@interface FriendGroupVC ()<FriendGroupCellDelegate, FriendGroupActionDelegate>
+@interface FriendGroupVC ()<FriendGroupCellDelegate, FriendGroupActionDelegate, PassValueDelegate>
 @property (strong , nonatomic) FriendGroupAction *friendGroup;
 
 @end
@@ -218,6 +220,25 @@ void alert(NSString *msg)
 }
 
 
+#pragma mark - PassValueDelegate
+
+- (void)passValue:(id)sender idendifier:(NSString *)idendifier
+{
+    if ([idendifier isEqualToString:NSStringFromClass([AddGroupVC class])])
+    {
+        //分组
+        [self.friendGroup addGroup:sender];
+        //刷新
+        [self.tableView reloadData];
+    }
+    else if ([idendifier isEqualToString:NSStringFromClass([AddMemberVC class])])
+    {
+        //成员
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:[sender integerValue]] withRowAnimation:UITableViewRowAnimationNone];
+    }
+}
+
+
 #pragma mark - 内存管理
 
 - (void)didReceiveMemoryWarning
@@ -230,7 +251,17 @@ void alert(NSString *msg)
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
+    if ([segue.identifier isEqualToString:@"addGroup"])
+    {
+        AddGroupVC *vc = [segue destinationViewController];
+        vc.delegate = self;
+    }
+    else if ([segue.identifier isEqualToString:@"addMember"])
+    {
+        AddMemberVC *vc = [segue destinationViewController];
+        vc.delegate = self;
+        vc.group = self.friendGroup;
+    }
 }
 
 
