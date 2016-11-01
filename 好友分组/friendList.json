@@ -5,42 +5,63 @@
             "friendNum" : "10",
             "friendList" : [
                 {
-                    "nickname" : "会飞的鱼",
+                    "nickname" : "诸葛孔明",
                     "account" : "100001",
                     "avatar" : "baiqi.jpg"
                 },
                 {
-                    "nickname" : "不吃肉的老虎",
+                    "nickname" : "荀文诺",
                     "account" : "100002",
                     "avatar" : "meinv.jpg"
                 },
                 {
-                    "nickname" : "会飞的猫",
+                    "nickname" : "周瑜",
                     "account" : "100003",
                     "avatar" : "sucai.jpg"
                 }
             ]
         },
         {
-        "groupName" : "我的同学",
-        "friendNum" : "10",
-        "friendList" : [
-                {
-                    "nickname" : "曹操",
-                    "account" : "100004",
-                    "avatar" : "baiqi.jpg"
-                },
-                {
-                    "nickname" : "白小飞",
-                    "account" : "100005",
-                    "avatar" : "meinv.jpg"
-                },
-                {
-                    "nickname" : "刘备",
-                    "account" : "100006",
-                    "avatar" : "sucai.jpg"
-                }
-            ]
+            "groupName" : "我的帝王",
+            "friendNum" : "10",
+            "friendList" : [
+                    {
+                        "nickname" : "曹孟德",
+                        "account" : "100004",
+                        "avatar" : "baiqi.jpg"
+                    },
+                    {
+                        "nickname" : "刘玄德",
+                        "account" : "100005",
+                        "avatar" : "meinv.jpg"
+                    },
+                    {
+                        "nickname" : "孙仲谋",
+                        "account" : "100006",
+                        "avatar" : "sucai.jpg"
+                    }
+                ]
+        },
+        {
+            "groupName" : "我的部将",
+            "friendNum" : "10",
+            "friendList" : [
+                               {
+                                   "nickname" : "关云长",
+                                   "account" : "100007",
+                                   "avatar" : "baiqi.jpg"
+                               },
+                               {
+                                   "nickname" : "张翼德",
+                                   "account" : "100008",
+                                   "avatar" : "meinv.jpg"
+                               },
+                               {
+                                   "nickname" : "赵子龙",
+                                   "account" : "100009",
+                                   "avatar" : "sucai.jpg"
+                               }
+                           ]
         }
     ]
 }
